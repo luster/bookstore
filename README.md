@@ -21,7 +21,7 @@ There are many powerful features and plugins for Maven which allow you to do muc
 - Making sure transitive dependencies are resolved deterministically (maven-enforcer-plugin)
 - Inheriting build settings from a parent POM
 - Generating code coverage reports (maven-jacoco-plugin)
-- Defining where to find dependencies (many companies use internal “artifactories”
+- Defining where to find dependencies (many companies use internal “artifactories”)
 - Defining how to evolve versions of your software (particularly important for libraries which 
 other code and services depend on) (maven-buildnumber-plugin)
 - Defining and enforcing other company standards and best practices
@@ -133,7 +133,8 @@ Created-By: 1.8.0_144 (Oracle Corporation)
 Main-Class: edu.cooper.ece366.bookstore.Main
 ``` 
 
-You can then run the JAR:
+Notice that this indicates which class is the main class to run when you run the jar. In any 
+event, you can run the JAR:
 
 ```bash
 $ java -jar Main.jar
@@ -152,5 +153,3 @@ most cases) because maven provides powerful support for resolving dependencies. 
 are deployed without this plugin must define their classpath, which requires more setup. In class, 
 when we run a main method on a class in IntelliJ, you'll notice if you hover over the command 
 that the classpath is being defined for you.
-
-
