@@ -153,3 +153,25 @@ most cases) because maven provides powerful support for resolving dependencies. 
 are deployed without this plugin must define their classpath, which requires more setup. In class, 
 when we run a main method on a class in IntelliJ, you'll notice if you hover over the command 
 that the classpath is being defined for you.
+
+## Running the template code
+```bash
+$ mvn package
+$ java -jar target/bookstore-1.0-SNAPSHOT.jar
+```
+
+Then go to `http://localhost:8080/ping` in your browser or `curl` it locally.
+
+Note that if you make changes, you have to re-package and run the jar. If you're working within 
+IntelliJ, you can make code changes and just re-run the `Main` class. The IDE will recompile 
+whatever is necessary to re-run. 
+
+WARNING: watch out for any libraries which generate code for you. In many cases, you may need to 
+run `mvn clean compile` in order for the IDE to pick up the generated code property. Generated 
+code libraries include [automatter](https://github.com/danielnorberg/auto-matter) which is used 
+for creating lightweight Java objects with generated builder code. I highly recommend you use 
+something simple like this to manage models between your database and application code as well as
+ to facilitate serializing/deserializing between your client and server. I suggest digging in to 
+ this library as well as `jackson` for actually deserializing and serializing.
+ 
+ 

@@ -19,8 +19,7 @@ public class Main {
         requestContext.pathArgs().get("name");
     environment
         .routingEngine()
-        .registerAutoRoute(Route.sync("GET", "/ping", pingHandler))
-        .registerAutoRoute(Route.sync("GET", "/name/<name>", handler));
+        .registerAutoRoute(Route.sync("GET", "/ping", pingHandler));
   }
 
 }
