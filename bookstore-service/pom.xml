@@ -19,7 +19,12 @@
     <dependency>
       <groupId>com.spotify</groupId>
       <artifactId>apollo-http-service</artifactId>
-      <version>1.0.3</version>
+      <version>1.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.spotify</groupId>
+      <artifactId>apollo-extra</artifactId>
+      <version>1.10.1</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -30,6 +35,17 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.norberg</groupId>
+      <artifactId>auto-matter</artifactId>
+      <version>0.15.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.norberg</groupId>
+      <artifactId>auto-matter-jackson</artifactId>
+      <version>0.15.1</version>
     </dependency>
 
     <!-- test only -->

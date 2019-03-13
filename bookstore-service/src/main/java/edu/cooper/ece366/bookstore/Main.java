@@ -1,11 +1,11 @@
 package edu.cooper.ece366.bookstore;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spotify.apollo.Environment;
-import com.spotify.apollo.RequestContext;
 import com.spotify.apollo.httpservice.HttpService;
 import com.spotify.apollo.httpservice.LoadingException;
 import com.spotify.apollo.route.Route;
-import com.spotify.apollo.route.SyncHandler;
+import io.norberg.automatter.jackson.AutoMatterModule;
 
 public class Main {
 
@@ -14,12 +14,12 @@ public class Main {
   }
 
   private static void init(final Environment environment) {
-    SyncHandler<String> pingHandler = requestContext -> "pong";
-    final SyncHandler<String> handler = (RequestContext requestContext) ->
-        requestContext.pathArgs().get("name");
+    ObjectMapper objectMapper = new ObjectMapper().registerModule(new AutoMatterModule());
+    BookHandlers bookHandlers = new BookHandlers(objectMapper);
+
     environment
         .routingEngine()
-        .registerAutoRoute(Route.sync("GET", "/ping", pingHandler));
+        .registerAutoRoute(Route.sync("GET", "/ping", rc -> "pong"))
+        .registerRoutes(bookHandlers.routes());
   }
-
 }
