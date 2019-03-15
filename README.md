@@ -167,7 +167,7 @@ IntelliJ, you can make code changes and just re-run the `Main` class. The IDE wi
 whatever is necessary to re-run. 
 
 WARNING: watch out for any libraries which generate code for you. In many cases, you may need to 
-run `mvn clean compile` in order for the IDE to pick up the generated code property. Generated 
+run `mvn clean compile` in order for the IDE to pick up the generated code properly. Generated 
 code libraries include [automatter](https://github.com/danielnorberg/auto-matter) which is used 
 for creating lightweight Java objects with generated builder code. I highly recommend you use 
 something simple like this to manage models between your database and application code as well as
