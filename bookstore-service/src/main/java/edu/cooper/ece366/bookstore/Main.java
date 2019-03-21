@@ -5,6 +5,9 @@ import com.spotify.apollo.Environment;
 import com.spotify.apollo.httpservice.HttpService;
 import com.spotify.apollo.httpservice.LoadingException;
 import com.spotify.apollo.route.Route;
+import edu.cooper.ece366.bookstore.handler.BookHandlers;
+import edu.cooper.ece366.bookstore.store.BookStore;
+import edu.cooper.ece366.bookstore.store.BookStoreJdbc;
 import io.norberg.automatter.jackson.AutoMatterModule;
 
 public class Main {
@@ -15,7 +18,9 @@ public class Main {
 
   private static void init(final Environment environment) {
     ObjectMapper objectMapper = new ObjectMapper().registerModule(new AutoMatterModule());
-    BookHandlers bookHandlers = new BookHandlers(objectMapper);
+    BookStore bookStore = new BookStoreJdbc(environment.config());
+    BookHandlers bookHandlers = new BookHandlers(objectMapper, bookStore);
+    bookHandlers.routes();
 
     environment
         .routingEngine()

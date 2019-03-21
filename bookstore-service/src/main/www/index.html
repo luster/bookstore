@@ -1,0 +1,13 @@
+<html>
+<head></head>
+<body>
+Hello world
+<script type="text/javascript">
+  let getBook = async () => {
+    const result = await fetch('http://localhost:8080/book/1');
+    console.log(result);
+  };
+  getBook();
+</script>
+</body>
+</html>
