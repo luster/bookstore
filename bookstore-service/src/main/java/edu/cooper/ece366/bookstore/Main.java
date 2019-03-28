@@ -20,7 +20,6 @@ public class Main {
     ObjectMapper objectMapper = new ObjectMapper().registerModule(new AutoMatterModule());
     BookStore bookStore = new BookStoreJdbc(environment.config());
     BookHandlers bookHandlers = new BookHandlers(objectMapper, bookStore);
-    bookHandlers.routes();
 
     environment
         .routingEngine()

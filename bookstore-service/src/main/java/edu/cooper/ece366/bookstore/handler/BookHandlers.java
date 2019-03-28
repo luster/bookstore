@@ -1,6 +1,7 @@
 package edu.cooper.ece366.bookstore.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.annotations.VisibleForTesting;
 import com.spotify.apollo.RequestContext;
 import com.spotify.apollo.Response;
 import com.spotify.apollo.route.AsyncHandler;
@@ -37,11 +38,13 @@ public class BookHandlers {
     );
   }
 
+  @VisibleForTesting
   Book getBook(final RequestContext requestContext) {
     return bookStore.getBook(requestContext.pathArgs().get("id"));
   }
 
-  private List<Book> getBooks(final RequestContext requestContext) {
+  @VisibleForTesting
+  List<Book> getBooks(final RequestContext requestContext) {
     return Collections.singletonList(book);
   }
 
