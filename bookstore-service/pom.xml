@@ -20,7 +20,7 @@
       <dependency>
         <groupId>com.spotify</groupId>
         <artifactId>apollo-bom</artifactId>
-        <version>1.2.4</version>
+        <version>1.10.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -31,23 +31,11 @@
     <dependency>
       <groupId>com.spotify</groupId>
       <artifactId>apollo-http-service</artifactId>
-      <version>1.10.1</version>
     </dependency>
     <dependency>
       <groupId>com.spotify</groupId>
       <artifactId>apollo-extra</artifactId>
-      <version>1.10.1</version>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
-    </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.slf4j</groupId>-->
-      <!--<artifactId>slf4j-simple</artifactId>-->
-      <!--<version>1.7.25</version>-->
-    <!--</dependency>-->
 
     <dependency>
       <groupId>mysql</groupId>
@@ -64,6 +52,15 @@
       <groupId>io.norberg</groupId>
       <artifactId>auto-matter-jackson</artifactId>
       <version>0.15.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.spotify</groupId>
+      <artifactId>apollo-jetty-http-server</artifactId>
     </dependency>
 
     <!-- test only -->
